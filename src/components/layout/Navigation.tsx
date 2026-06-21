@@ -69,9 +69,9 @@ export function Navigation({
           color: isLight ? "#F7F4EE" : "#0C0B09",
         }}
       >
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col justify-center h-[80px] lg:h-[120px]">
+        <div className="max-w-[1600px] mx-auto px-2 lg:px-12 flex flex-col justify-center h-[68px] lg:h-[120px]">
           {/* Top Tier */}
-          <div className="flex items-center justify-between pb-4">
+          <div className="flex items-center justify-between lg:pb-4">
             
             {/* Left: Socials & Phone */}
             <div className="hidden lg:flex items-center gap-6 shrink-0" style={{ color: isLight ? "#F7F4EE" : "#0C0B09" }}>
@@ -130,10 +130,13 @@ export function Navigation({
 
             {/* Right: User, Cart, Button */}
             <div className="flex items-center justify-end gap-4 lg:gap-6 shrink-0 lg:min-w-[250px]">
+              
+              {/* Login Icon (Visible on all breakpoints) */}
+              <button onClick={() => onNavigate("login")} className="hover:opacity-70 transition-opacity">
+                <User size={20} strokeWidth={1.5} />
+              </button>
+
               <div className="hidden lg:flex items-center gap-6">
-                <button onClick={() => onNavigate("login")} className="hover:opacity-70 transition-opacity">
-                  <User size={20} strokeWidth={1.5} />
-                </button>
                 <button
                   onClick={() => onNavigate("appointments")}
                   className="text-[0.65rem] tracking-[0.15em] uppercase px-5 py-2 transition-all duration-300 border hover:bg-[#0C0B09] hover:text-[#F7F4EE]"
@@ -220,90 +223,101 @@ export function Navigation({
       <div
         className="fixed inset-0 z-[100] flex flex-col transition-all duration-500"
         style={{
-          backgroundColor: "#0C0B09",
+          backgroundColor: "#F7F4EE",
           opacity: menuOpen ? 1 : 0,
           pointerEvents: menuOpen ? "all" : "none",
         }}
       >
         <div className="flex items-center justify-between px-8 h-20">
-          <span
-            style={{
-              fontFamily: "'Bodoni Moda', serif",
-              fontWeight: 400,
-              fontSize: "1.2rem",
-              color: "#F7F4EE",
-              letterSpacing: "0.08em",
-            }}
-          >
-            Rian Fernandez
-          </span>
-          <button onClick={() => setMenuOpen(false)} style={{ color: "#F7F4EE" }}>
-            <X size={22} strokeWidth={1.5} />
+          <div className="flex items-center gap-3">
+            <img src="/rf-logo.png" alt="Logo" className="h-6 object-contain" />
+            <span
+              style={{
+                fontFamily: "'Bodoni Moda', serif",
+                fontWeight: 400,
+                fontSize: "1.1rem",
+                color: "#0C0B09",
+                letterSpacing: "0.15em",
+                textTransform: "uppercase"
+              }}
+            >
+              RF Atelier
+            </span>
+          </div>
+          <button onClick={() => setMenuOpen(false)} style={{ color: "#0C0B09" }}>
+            <X size={20} strokeWidth={1.5} />
           </button>
         </div>
 
-        <div className="flex flex-col justify-center flex-1 px-8 gap-8">
+        <div className="flex flex-col justify-center flex-1 px-10 gap-8">
           {navItems.map((item, i) => (
             <button
               key={item.page}
               onClick={() => {
                 setMenuOpen(false);
-                onNavigate(item.page);
+                onNavigate(item.page as Page);
               }}
-              className="text-left transition-opacity duration-300"
+              className="text-left transition-opacity duration-300 relative flex items-center"
               style={{
                 fontFamily: "'Bodoni Moda', serif",
-                fontWeight: 300,
-                fontSize: "2.2rem",
-                color: "#F7F4EE",
-                letterSpacing: "0.04em",
+                fontWeight: 400,
+                fontSize: "1.1rem",
+                color: "#0C0B09",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
                 opacity: menuOpen ? 1 : 0,
                 transform: menuOpen ? "translateX(0)" : "translateX(-20px)",
                 transition: `opacity 0.5s ease ${i * 60 + 200}ms, transform 0.5s ease ${i * 60 + 200}ms`,
                 background: "none",
                 border: "none",
                 cursor: "pointer",
+                paddingLeft: currentPage === item.page ? "16px" : "0px",
               }}
             >
+              <span 
+                className="absolute left-0 top-0 bottom-0 w-[2px] transition-all duration-300"
+                style={{
+                  backgroundColor: "#0C0B09",
+                  opacity: currentPage === item.page ? 1 : 0
+                }}
+              />
               {item.label}
             </button>
           ))}
+
+          <div className="h-[1px] w-full bg-black/10 my-4" />
 
           <button
             onClick={() => {
               setMenuOpen(false);
               onNavigate("appointments");
             }}
-            className="mt-8 text-xs tracking-[0.22em] uppercase px-8 py-4 border text-left self-start"
+            className="w-full py-4 text-[0.65rem] tracking-[0.2em] uppercase text-center"
             style={{
               fontFamily: "Raleway, sans-serif",
               fontWeight: 400,
-              borderColor: "rgba(247,244,238,0.3)",
+              backgroundColor: "#0C0B09",
               color: "#F7F4EE",
-              background: "none",
+              border: "none",
               cursor: "pointer",
             }}
           >
             Book Consultation
           </button>
 
-          <button
-            onClick={() => {
-              setMenuOpen(false);
-              onNavigate("login");
-            }}
-            className="mt-2 text-xs tracking-[0.22em] uppercase px-8 py-2 text-left self-start"
-            style={{
-              fontFamily: "Raleway, sans-serif",
-              fontWeight: 400,
-              color: "rgba(247,244,238,0.7)",
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-            }}
-          >
-            Login
-          </button>
+          <div className="flex flex-col items-center justify-center gap-4 mt-8">
+            <div className="flex gap-6 text-[#0C0B09]">
+              <a href="https://web.facebook.com/rian.fernandez" target="_blank" rel="noreferrer" className="hover:opacity-70">
+                <Facebook size={18} strokeWidth={1.5} />
+              </a>
+              <a href="https://www.instagram.com/rianfernandez888" target="_blank" rel="noreferrer" className="hover:opacity-70">
+                <Instagram size={18} strokeWidth={1.5} />
+              </a>
+            </div>
+            <a href="mailto:rianfernandez888@gmail.com" className="text-[0.65rem] tracking-widest text-[#0C0B09] hover:opacity-70 transition-opacity" style={{ fontFamily: "Raleway, sans-serif" }}>
+              rianfernandez888@gmail.com
+            </a>
+          </div>
         </div>
       </div>
     </>

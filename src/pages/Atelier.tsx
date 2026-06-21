@@ -179,10 +179,10 @@ export function AtelierPage({ onNavigate }: { onNavigate: (page: Page) => void }
             {steps.map((step, i) => (
               <Reveal key={step.number} delay={i * 60}>
                 <div
-                  className="grid grid-cols-12 gap-8 py-12"
+                  className="flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 py-12"
                   style={{ borderTop: "1px solid rgba(247,244,238,0.1)" }}
                 >
-                  <div className="col-span-2">
+                  <div className="md:col-span-2">
                     <span
                       style={{
                         fontFamily: "'Bodoni Moda', serif",
@@ -195,7 +195,7 @@ export function AtelierPage({ onNavigate }: { onNavigate: (page: Page) => void }
                       {step.number}
                     </span>
                   </div>
-                  <div className="col-span-4">
+                  <div className="md:col-span-4 mb-4 md:mb-0">
                     <h3
                       style={{
                         fontFamily: "'Bodoni Moda', serif",
@@ -208,7 +208,7 @@ export function AtelierPage({ onNavigate }: { onNavigate: (page: Page) => void }
                       {step.title}
                     </h3>
                   </div>
-                  <div className="col-span-6">
+                  <div className="md:col-span-6">
                     <p
                       style={{
                         fontFamily: "Raleway, sans-serif",

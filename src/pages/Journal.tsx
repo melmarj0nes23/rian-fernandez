@@ -134,16 +134,6 @@ export function JournalPage() {
               >
                 {featured.excerpt}
               </p>
-              <p
-                className="mt-6 text-xs tracking-[0.15em]"
-                style={{
-                  fontFamily: "Raleway, sans-serif",
-                  fontWeight: 300,
-                  color: "#7A7468",
-                }}
-              >
-                {featured.readTime} min read
-              </p>
             </div>
           </div>
         </Reveal>
@@ -208,16 +198,6 @@ export function JournalPage() {
                   }}
                 >
                   {entry.excerpt}
-                </p>
-                <p
-                  className="mt-4 text-xs tracking-[0.15em]"
-                  style={{
-                    fontFamily: "Raleway, sans-serif",
-                    fontWeight: 300,
-                    color: "#7A7468",
-                  }}
-                >
-                  {entry.readTime} min read
                 </p>
               </div>
             </Reveal>
