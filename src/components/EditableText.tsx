@@ -100,7 +100,7 @@ export function EditableText({
       <Component className={className} style={style}>{value}</Component>
       <button
         onClick={() => setIsEditing(true)}
-        className="absolute -top-3 -right-3 opacity-0 group-hover:opacity-100 transition-opacity bg-[#B8955A] text-white p-1.5 rounded-full shadow-lg z-10 hover:scale-110"
+        className="absolute -top-3 -right-3 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity bg-[#B8955A] text-white p-1.5 rounded-full shadow-lg z-10 hover:scale-110"
       >
         <Pencil size={12} />
       </button>

@@ -62,7 +62,7 @@ export function EditableImage({
       {isAdmin && !isEditing && (
         <button
           onClick={() => setIsEditing(true)}
-          className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-[#B8955A] text-white p-2.5 rounded-full shadow-lg z-50 hover:scale-110"
+          className="absolute bottom-4 right-4 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity bg-[#B8955A] text-white p-2.5 rounded-full shadow-lg z-50 hover:scale-110"
         >
           <ImageIcon size={16} />
         </button>
