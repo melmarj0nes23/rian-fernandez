@@ -69,7 +69,7 @@ export function Navigation({
           color: isLight ? "#F7F4EE" : "#0C0B09",
         }}
       >
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col justify-center h-[120px]">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col justify-center h-[80px] lg:h-[120px]">
           {/* Top Tier */}
           <div className="flex items-center justify-between pb-4">
             
@@ -90,7 +90,7 @@ export function Navigation({
             {/* Center: Logo */}
             <button
               onClick={() => onNavigate("home")}
-              className="flex items-center justify-center leading-none group shrink-0 mx-auto"
+              className="flex items-center justify-start lg:justify-center leading-none group shrink-0 lg:mx-auto"
             >
               <img 
                 src="/rf-logo.png" 
@@ -129,31 +129,11 @@ export function Navigation({
             </button>
 
             {/* Right: User, Cart, Button */}
-            <div className="flex items-center justify-end gap-6 shrink-0 min-w-[250px]">
+            <div className="flex items-center justify-end gap-4 lg:gap-6 shrink-0 lg:min-w-[250px]">
               <div className="hidden lg:flex items-center gap-6">
                 <button onClick={() => onNavigate("login")} className="hover:opacity-70 transition-opacity">
                   <User size={20} strokeWidth={1.5} />
                 </button>
-                
-                <button
-                  onClick={() => onNavigate("dossier")}
-                  className="relative hover:opacity-70 transition-opacity"
-                >
-                  <ShoppingBag size={20} strokeWidth={1.5} />
-                  {cartCount > 0 && (
-                    <span
-                      className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full flex items-center justify-center text-white"
-                      style={{
-                        fontSize: "0.6rem",
-                        backgroundColor: "#B8955A",
-                        fontFamily: "Raleway, sans-serif",
-                      }}
-                    >
-                      {cartCount}
-                    </span>
-                  )}
-                </button>
-
                 <button
                   onClick={() => onNavigate("appointments")}
                   className="text-[0.65rem] tracking-[0.15em] uppercase px-5 py-2 transition-all duration-300 border hover:bg-[#0C0B09] hover:text-[#F7F4EE]"
@@ -168,6 +148,26 @@ export function Navigation({
                   Book Consultation
                 </button>
               </div>
+
+              {/* Cart Icon (Visible on all breakpoints) */}
+              <button
+                onClick={() => onNavigate("dossier")}
+                className="relative hover:opacity-70 transition-opacity"
+              >
+                <ShoppingBag size={20} strokeWidth={1.5} />
+                  {cartCount > 0 && (
+                    <span
+                      className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full flex items-center justify-center text-white"
+                      style={{
+                        fontSize: "0.6rem",
+                        backgroundColor: "#B8955A",
+                        fontFamily: "Raleway, sans-serif",
+                      }}
+                    >
+                      {cartCount}
+                    </span>
+                  )}
+                </button>
 
               {/* Mobile Hamburger */}
               <button
@@ -285,6 +285,24 @@ export function Navigation({
             }}
           >
             Book Consultation
+          </button>
+
+          <button
+            onClick={() => {
+              setMenuOpen(false);
+              onNavigate("login");
+            }}
+            className="mt-2 text-xs tracking-[0.22em] uppercase px-8 py-2 text-left self-start"
+            style={{
+              fontFamily: "Raleway, sans-serif",
+              fontWeight: 400,
+              color: "rgba(247,244,238,0.7)",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            Login
           </button>
         </div>
       </div>

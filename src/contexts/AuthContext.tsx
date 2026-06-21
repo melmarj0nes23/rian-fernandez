@@ -33,10 +33,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     await signOut(auth);
   };
 
+  const ADMIN_EMAILS = [
+    'bruc975@gmail.com',
+    'cambayenchiong1217@gmail.com',
+    'rianfernandez888@gmail.com'
+  ];
+
   return (
     <AuthContext.Provider value={{ 
       user, 
-      isAdmin: user?.email === 'bruc975@gmail.com',
+      isAdmin: user?.email ? ADMIN_EMAILS.includes(user.email) : false,
       loading, 
       logout 
     }}>

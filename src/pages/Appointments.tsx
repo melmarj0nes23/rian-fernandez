@@ -83,9 +83,9 @@ export function AppointmentsPage() {
   return (
     <div className="pt-32 md:pt-40 pb-32">
       <div className="max-w-screen-xl mx-auto px-8 md:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
-          {/* Info */}
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-24 gap-y-16 md:gap-y-8">
+          {/* Header */}
+          <div className="order-1 md:col-start-1">
             <Reveal>
               <p
                 className="text-xs tracking-[0.35em] uppercase mb-6"
@@ -121,9 +121,12 @@ export function AppointmentsPage() {
                 understand the garment you have always imagined.
               </p>
             </Reveal>
+          </div>
 
+          {/* Info */}
+          <div className="order-3 md:col-start-1">
             <Reveal delay={100}>
-              <div className="mt-16 space-y-6">
+              <div className="mt-8 md:mt-16 space-y-6">
                 {[
                   { label: "Location", value: "20 Namtan Bldg., National Road, Alcala, 2425 Pangasinan, Philippines" },
                   { label: "Hours", value: "Monday–Saturday, 10am–6pm" },
@@ -158,7 +161,7 @@ export function AppointmentsPage() {
           </div>
 
           {/* Form */}
-          <Reveal delay={80}>
+          <Reveal delay={80} className="order-2 md:col-start-2 md:row-span-2">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-2 gap-5">
                 {[
