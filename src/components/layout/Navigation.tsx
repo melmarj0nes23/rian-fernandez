@@ -136,21 +136,7 @@ export function Navigation({
                 <User size={20} strokeWidth={1.5} />
               </button>
 
-              <div className="hidden lg:flex items-center gap-6">
-                <button
-                  onClick={() => onNavigate("appointments")}
-                  className="text-[0.65rem] tracking-[0.15em] uppercase px-5 py-2 transition-all duration-300 border hover:bg-[#0C0B09] hover:text-[#F7F4EE]"
-                  style={{
-                    fontFamily: "Raleway, sans-serif",
-                    fontWeight: 400,
-                    borderColor: "#B8955A", // Gold outline from mockup
-                    color: isLight ? "#F7F4EE" : "#0C0B09",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  Book Consultation
-                </button>
-              </div>
+
 
               {/* Cart Icon (Visible on all breakpoints) */}
               <button
@@ -171,6 +157,22 @@ export function Navigation({
                     </span>
                   )}
                 </button>
+
+              <div className="hidden lg:flex items-center gap-6">
+                <button
+                  onClick={() => onNavigate("appointments")}
+                  className="text-[0.65rem] tracking-[0.15em] uppercase px-5 py-2 transition-all duration-300 border hover:bg-[#0C0B09] hover:text-[#F7F4EE]"
+                  style={{
+                    fontFamily: "Raleway, sans-serif",
+                    fontWeight: 400,
+                    borderColor: "#B8955A", // Gold outline from mockup
+                    color: isLight ? "#F7F4EE" : "#0C0B09",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Book Consultation
+                </button>
+              </div>
 
               {/* Mobile Hamburger */}
               <button
