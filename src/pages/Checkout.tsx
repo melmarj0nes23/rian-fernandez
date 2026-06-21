@@ -141,7 +141,7 @@ export function CheckoutPage({
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
           {/* Form */}
-          <div>
+          <div className="order-2 lg:order-1">
             <form onSubmit={handleSubmit}>
               {step === 1 ? (
                 <div className="space-y-8">
@@ -283,7 +283,7 @@ export function CheckoutPage({
           </div>
 
           {/* Order summary */}
-          <div>
+          <div className="order-1 lg:order-2">
             <div className="sticky top-28 bg-[#F7F4EE] p-8 border" style={{ borderColor: "rgba(12,11,9,0.1)" }}>
               <h3
                 className="mb-8"
