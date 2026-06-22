@@ -61,15 +61,15 @@ export function HomePage({
               "linear-gradient(to top, rgba(12,11,9,0.75) 0%, rgba(12,11,9,0.15) 55%, transparent 100%)",
           }}
         />
-        <div className="relative z-10 px-8 md:px-16 pb-20 md:pb-48 max-w-screen-xl mx-auto w-full pointer-events-none">
+        <div className="relative z-10 px-8 md:px-16 pb-20 md:pb-36 max-w-screen-xl mx-auto w-full pointer-events-none">
           <EditableText
             as="p"
             collection="siteContent"
             documentId="home"
             field="heroSubtitle"
             value={homeData?.heroSubtitle || "Spring / Summer 2025 Couture"}
-            wrapperClassName="relative group inline-block mb-5 pointer-events-auto"
-            className="text-xs tracking-[0.35em] uppercase"
+            wrapperClassName="relative group inline-block pointer-events-auto"
+            className="text-xs tracking-[0.35em] uppercase block mb-5"
             style={{
               fontFamily: "Raleway, sans-serif",
               fontWeight: 300,
@@ -83,6 +83,7 @@ export function HomePage({
             field="heroTitle"
             value={homeData?.heroTitle || "Silénio"}
             wrapperClassName="relative group block pointer-events-auto"
+            className="block"
             style={{
               fontFamily: "'Bodoni Moda', serif",
               fontWeight: 300,
@@ -98,7 +99,8 @@ export function HomePage({
             documentId="home"
             field="heroTagline"
             value={homeData?.heroTagline || "In silence, beauty speaks."}
-            wrapperClassName="relative group block mt-6 max-w-sm pointer-events-auto"
+            wrapperClassName="relative group block pointer-events-auto"
+            className="block max-w-sm mt-6"
             style={{
               fontFamily: "'Bodoni Moda', serif",
               fontStyle: "italic",
