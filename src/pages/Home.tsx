@@ -61,7 +61,7 @@ export function HomePage({
               "linear-gradient(to top, rgba(12,11,9,0.75) 0%, rgba(12,11,9,0.15) 55%, transparent 100%)",
           }}
         />
-        <div className="relative z-10 px-8 md:px-16 pb-20 md:pb-36 max-w-screen-xl mx-auto w-full pointer-events-none">
+        <div className="relative z-10 px-8 md:px-16 pb-28 md:pb-36 max-w-screen-xl mx-auto w-full pointer-events-none">
           <EditableText
             as="p"
             collection="siteContent"
