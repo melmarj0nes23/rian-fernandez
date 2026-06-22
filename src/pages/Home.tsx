@@ -61,7 +61,7 @@ export function HomePage({
               "linear-gradient(to top, rgba(12,11,9,0.75) 0%, rgba(12,11,9,0.15) 55%, transparent 100%)",
           }}
         />
-        <div className="relative z-10 px-8 md:px-16 pb-20 md:pb-28 max-w-screen-xl mx-auto w-full pointer-events-none">
+        <div className="relative z-10 px-8 md:px-16 pb-32 md:pb-48 max-w-screen-xl mx-auto w-full pointer-events-none">
           <EditableText
             as="p"
             collection="siteContent"
@@ -139,29 +139,6 @@ export function HomePage({
           </div>
         </div>
 
-        {/* Scroll cue */}
-        <div className="absolute bottom-10 right-12 flex flex-col items-center gap-3 z-10">
-          <span
-            style={{
-              fontFamily: "Raleway, sans-serif",
-              fontWeight: 300,
-              fontSize: "0.65rem",
-              letterSpacing: "0.25em",
-              textTransform: "uppercase",
-              color: "rgba(247,244,238,0.4)",
-              writingMode: "vertical-rl",
-            }}
-          >
-            Scroll
-          </span>
-          <div
-            className="w-px h-16"
-            style={{
-              background:
-                "linear-gradient(to bottom, rgba(247,244,238,0.4), transparent)",
-            }}
-          />
-        </div>
       </section>
 
       {/* Featured Collection */}
